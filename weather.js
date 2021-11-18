@@ -51,7 +51,7 @@
 //     `;
 //   if (isDayTime(imageName)) {
 //     // console.log('day');
-//     timeImage.setAttribute('src', '../Assets/day_image.svg');
+//     timeImage.setAttribute('src', '../assets/day_image.svg');
 //     if (cityName.classList.contains('text-white')) {
 //       cityName.classList.remove('text-white');
 //     } else {
@@ -60,7 +60,7 @@
 
 //   } else {
 //     // console.log('night');
-//     timeImage.setAttribute('src', '../Assets/night_image.svg');
+//     timeImage.setAttribute('src', '../assets/night_image.svg');
 //     if (cityName.classList.contains('text-black')) {
 //       cityName.classList.remove('text-black');
 //     } else {
@@ -108,7 +108,7 @@
 // //     `;
 // //   if (isDayTime(imageName)) {
 // //     // console.log('day');
-// //     timeImage.setAttribute('src', '../Assets/day_image.svg');
+// //     timeImage.setAttribute('src', '../assets/day_image.svg');
 // //     if (cityName.classList.contains('text-white')) {
 // //       cityName.classList.remove('text-white');
 // //     } else {
@@ -117,7 +117,7 @@
 
 // //   } else {
 // //     // console.log('night');
-// //     timeImage.setAttribute('src', '../Assets/night_image.svg');
+// //     timeImage.setAttribute('src', '../assets/night_image.svg');
 // //     if (cityName.classList.contains('text-black')) {
 // //       cityName.classList.remove('text-black');
 // //     } else {

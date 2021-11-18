@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+p {
+  margin-bottom: 0;
+}
+/* .card {
+  border-radius: 100px;
+  border: none;
+} */
+.city-name {
+  position: absolute;
+  width: 100%;
+}
+.city-name p {
+  font-size: 16pt;
+  font-weight: 400;
+  color: grey;
+}
+.image_1 {
+  width: 250px;
+  height: 250px;
+  margin-top: 60px;
+}
+.temp span {
+  font-weight: 100;
+  font-size: 4em;
+  letter-spacing: -5px;
+  white-space: nowrap;
+}
+.card-mid {
+  line-height: 0.5;
+}
+.condition {
+  line-height: 1em;
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: capitalize;
+}
+.high::before {
+  content: "";
+  background: url("../assets/up.svg") no-repeat;
+  width: 10px;
+  height: 15px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.low::before {
+  content: "";
+  background: url("../assets/down.svg") no-repeat;
+  width: 10px;
+  height: 15px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
+.icon-container {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background: #202020;
+}
+.icon-container img {
+  margin: auto;
+}
+.wind {
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: 0.1px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+.card-bottom {
+  line-height: 1.5;
+  display: flex;
+}
+.week-maxtemp {
+  float: left;
+}
+.week-mintemp {
+  float: right;
+}
+.highlight-cards {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+.highlight-card {
+  background: white;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background: white;
+  text-align: center;
+  padding: 10px;
+  min-height: 200px;
+}
+.highlight-card img {
+  height: 150px;
+}
+.highlight-card-head {
+  color: #444242;
+  margin: 30px 0px;
+}
+.highlight-card-content {
+  font-size: 2rem;
+}
+.highlight-image img {
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

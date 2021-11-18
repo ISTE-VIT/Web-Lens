@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISTE Tech Week</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./weather.css" />
+  </head>
+
+  <body style="">
+    <!-- alan ai -->
+    <div class="alan-btn" style="cursor: pointer"></div>
+
+    <div class="container-fluid d-flex" style="min-height: 100vh">
+      <div class="col-lg-3 left_cloumn">
+        <div class="">
+          <form class="search-loaction d-flex justify-content-center">
+            <input
+              type="text"
+              name="city"
+              placeholder="Name of the city..."
+              autocomplete="off"
+              class="
+                text-muted
+                col-8
+                border border-top-0 border-right-0 border-left-0
+                mt-4
+                p-2
+              "
+            />
+          </form>
+          <div class="card-top text-center">
+            <div class="city-name my-3">
+              <p>Gurgaon</p>
+            </div>
+            <img
+              src="./assets/sunny.png"
+              alt=""
+              class="card-img-top time image_1"
+            />
+          </div>
+
+          <div class="card-body">
+            <div class="card-mid d-flex">
+              <div class="col-8 text-center temp">
+                <span class="deg">30&deg;C</span>
+              </div>
+              <div class="col-4 condition-temp">
+                <p class="condition">Thunder Storm</p>
+                <p class="high">30&deg;C</p>
+                <p class="low">27&deg;C</p>
+              </div>
+            </div>
+
+            <div class="icon-container card shadow mx-auto">
+              <img src="./assets/cloud.svg" alt="" />
+            </div>
+            <div
+              class="card-bottom px-3 py-2 d-flex justify-content-center gap-2"
+            >
+              <div class="text-center">
+                <p style="">30&deg;C</p>
+                <span>Feels Like</span>
+              </div>
+              <div class="text-center ml-2">
+                <p style="">55%</p>
+                <span>Humidity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 container px-4" style="background: #f6f6f8">
+        <div>
+          <h2 class="">Weekly Forecast</h2>
+
+          <div class="d-flex">
+            <div
+              style="border-radius: 15%"
+              class="
+                d-flex
+                col-12 col-md-4 col-xl-2 col-lg-3
+                flex-column
+                align-items-center
+                bg-white
+                p-3
+                font-weight-bold
+              "
+            >
+              <p>Sun</p>
+              <img
+                src="./assets/sunny.png"
+                class="py-4"
+                alt=""
+                style="max-width: 100px"
+              />
+              <div class="">
+                <span class="">20&deg;C</span>
+                <span class="">10&deg;C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <h2>Today's Highlights</h2>
+
+          <div class="d-flex highlight-cards">
+            <div class="highlight-card col-12 col-md-4 col-xl-2 col-lg-3">
+              <p class="highlight-card-head">Visibility</p>
+              <div class="highlight-card-content">10000 m</div>
+              <div class="highlight-image">
+                <img src="./assets/binoculars.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="../JS/request.js"></script> -->
+    <!-- <script src="../JS/weather.js"></script> -->
+    <!-- <script type="text/javascript"
+ src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+<script>
+  var alanBtnInstance = alanBtn({
+    key: "bec9b61a777d1cda39187084433f480d2e956eca572e1d8b807a3e2338fdd0dc/stage",
+    onCommand: function (commandData) {
+      if (commandData.command === "go:back") {
+        //call client code that will react on the received command
+      }
+    },
+    rootEl: document.getElementById("alan-btn"),
+  });
+         
+</script> -->
+  </body>
+</html>
