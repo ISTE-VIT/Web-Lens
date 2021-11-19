@@ -1,89 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ISTE Tech Week</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./weather.css" />
-  </head>
 
-  <body style="">
-    <!-- alan ai -->
-    <div class="alan-btn" style="cursor: pointer"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISTE Tech Week</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./weather.css" />
+</head>
 
-    <div class="container-fluid d-flex flex-wrap p-0" style="min-height: 100vh">
-      <div class="col-lg-3 left_cloumn">
-        <div class="">
-          <form class="search-loaction d-flex justify-content-center">
-            <input
-              type="text"
-              name="city"
-              placeholder="Name of the city..."
-              autocomplete="off"
-              class="
+<body>
+  <!-- alan ai -->
+  <div class="alan-btn" style="cursor: pointer"></div>
+
+
+  <!-- Main Code -->
+  <div class="container-fluid d-flex flex-wrap p-0" style="min-height: 100vh">
+    <div class="col-lg-3">
+      <div>
+        <form class="search-loaction d-flex justify-content-center">
+          <input type="text" name="city" placeholder="Name of the city..." style="outline: none;" autocomplete="off" class="
                 text-muted
                 col-8
                 border border-top-0 border-right-0 border-left-0
                 mt-4
                 p-2
-              "
-            />
-          </form>
-          <div class="card-top text-center">
-            <div class="city-name my-3">
-              <p>Gurgaon</p>
-            </div>
-            <img
-              src="./assets/sunny.png"
-              alt=""
-              class="card-img-top time image_1"
-            />
+              " />
+        </form>
+        <div class="card-top text-center my-5">
+          <div class="city-name my-3">
+            <p style="font-size: 2rem;">Gurgaon</p>
           </div>
-
-          <div class="card-body">
-            <div class="card-mid d-flex">
-              <div class="col-8 text-center temp">
-                <span class="deg">30&deg;C</span>
-              </div>
-              <div class="col-4 condition-temp">
-                <p class="condition">Thunder Storm</p>
-                <p class="high">30&deg;C</p>
-                <p class="low">27&deg;C</p>
-              </div>
+          <img src="./assets/sunny.png" alt="" style="max-width: 100px" class="card-img-top" />
+        </div>
+        <div class="card-body">
+          <div class="card-mid d-flex">
+            <div class="col-7 text-center temp">
+              <span style="font-size: 3em; letter-spacing: -2px;">30&deg;C</span>
             </div>
-
-            <div class="icon-container card shadow mx-auto">
-              <img src="./assets/cloud.svg" alt="" />
+            <div class="col-5 mt-3 condition-temp">
+              <p class="condition">Thunder Storm</p>
+              <p class="high">30&deg;C</p>
+              <p class="low">27&deg;C</p>
             </div>
-            <div
-              class="px-3 py-2 d-flex justify-content-center gap-2"
-            >
-              <div class="text-center">
-                <p>30&deg;C</p>
-                <span>Feels Like</span>
-              </div>
-              <div class="text-center ml-2">
-                <p>55%</p>
-                <span>Humidity</span>
-              </div>
+          </div>
+          <div class="icon-container card shadow mx-auto my-3">
+            <img src="./assets/cloud.svg" class="mx-auto my-auto" alt="" />
+          </div>
+          <div class="px-3 py-2 d-flex justify-content-center gap-2">
+            <div class="text-center">
+              <span class="pr-2">30&deg;C</span>
+              <span>Feels Like</span>
+            </div>
+            <div class="text-center ml-4">
+              <span>55%</span>
+              <span>Humidity</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-9 container px-4" style="background: #f6f6f8">
-        <div>
-          <h2 class="my-4">Weekly Forecast</h2>
-
-          <div class="d-flex flex-wrap">
-            <div
-              style="border-radius: 15%"
-              class="
+    </div>
+    <div class="col-lg-9 container px-4" style="background: #f6f6f8">
+      <div>
+        <h2 class="my-4">Weekly Forecast</h2>
+        <div class="d-flex flex-wrap">
+          <div style="border-radius: 15%" class="
                 d-flex
                 col-12 col-md-4 col-xl-2 col-lg-3
                 flex-column
@@ -92,23 +74,15 @@
                 p-3
                 m-2
                 font-weight-bold
-              "
-            >
-              <p>Sun</p>
-              <img
-                src="./assets/sunny.png"
-                class="py-4"
-                alt=""
-                style="max-width: 100px"
-              />
-              <div>
-                <span>20&deg;C</span>
-                <span>10&deg;C</span>
-              </div>
+              ">
+            <p>Sun</p>
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+            <div>
+              <span>20&deg;C</span>
+              <span>10&deg;C</span>
             </div>
-            <div
-            style="border-radius: 15%"
-            class="
+          </div>
+          <div style="border-radius: 15%" class="
               d-flex
               col-12 col-md-4 col-xl-2 col-lg-3
               flex-column
@@ -117,23 +91,15 @@
               p-3
               m-2
               font-weight-bold
-            "
-          >
+            ">
             <p>Sun</p>
-            <img
-              src="./assets/sunny.png"
-              class="py-4"
-              alt=""
-              style="max-width: 100px"
-            />
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
             <div>
               <span>20&deg;C</span>
               <span>10&deg;C</span>
             </div>
           </div>
-          <div
-          style="border-radius: 15%"
-          class="
+          <div style="border-radius: 15%" class="
             d-flex
             col-12 col-md-4 col-xl-2 col-lg-3
             flex-column
@@ -142,23 +108,15 @@
             p-3
             m-2
             font-weight-bold
-          "
-        >
-          <p>Sun</p>
-          <img
-            src="./assets/sunny.png"
-            class="py-4"
-            alt=""
-            style="max-width: 100px"
-          />
-          <div>
-            <span>20&deg;C</span>
-            <span>10&deg;C</span>
+          ">
+            <p>Sun</p>
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+            <div>
+              <span>20&deg;C</span>
+              <span>10&deg;C</span>
+            </div>
           </div>
-        </div>
-        <div
-        style="border-radius: 15%"
-        class="
+          <div style="border-radius: 15%" class="
           d-flex
           col-12 col-md-4 col-xl-2 col-lg-3
           flex-column
@@ -167,23 +125,15 @@
           p-3
           m-2
           font-weight-bold
-        "
-      >
-        <p>Sun</p>
-        <img
-          src="./assets/sunny.png"
-          class="py-4"
-          alt=""
-          style="max-width: 100px"
-        />
-        <div>
-          <span>20&deg;C</span>
-          <span>10&deg;C</span>
-        </div>
-      </div>
-      <div
-      style="border-radius: 15%"
-      class="
+        ">
+            <p>Sun</p>
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+            <div>
+              <span>20&deg;C</span>
+              <span>10&deg;C</span>
+            </div>
+          </div>
+          <div style="border-radius: 15%" class="
         d-flex
         col-12 col-md-4 col-xl-2 col-lg-3
         flex-column
@@ -192,23 +142,15 @@
         p-3
         m-2
         font-weight-bold
-      "
-    >
-      <p>Sun</p>
-      <img
-        src="./assets/sunny.png"
-        class="py-4"
-        alt=""
-        style="max-width: 100px"
-      />
-      <div>
-        <span>20&deg;C</span>
-        <span>10&deg;C</span>
-      </div>
-    </div>
-    <div
-    style="border-radius: 15%"
-    class="
+      ">
+            <p>Sun</p>
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+            <div>
+              <span>20&deg;C</span>
+              <span>10&deg;C</span>
+            </div>
+          </div>
+          <div style="border-radius: 15%" class="
       d-flex
       col-12 col-md-4 col-xl-2 col-lg-3
       flex-column
@@ -217,23 +159,15 @@
       p-3
       m-2
       font-weight-bold
-    "
-  >
-    <p>Sun</p>
-    <img
-      src="./assets/sunny.png"
-      class="py-4"
-      alt=""
-      style="max-width: 100px"
-    />
-    <div>
-      <span>20&deg;C</span>
-      <span>10&deg;C</span>
-    </div>
-  </div>
-  <div
-  style="border-radius: 15%"
-  class="
+    ">
+            <p>Sun</p>
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+            <div>
+              <span>20&deg;C</span>
+              <span>10&deg;C</span>
+            </div>
+          </div>
+          <div style="border-radius: 15%" class="
     d-flex
     col-12 col-md-4 col-xl-2 col-lg-3
     flex-column
@@ -242,31 +176,22 @@
     p-3
     m-2
     font-weight-bold
-  "
->
-  <p>Sun</p>
-  <img
-    src="./assets/sunny.png"
-    class="py-4"
-    alt=""
-    style="max-width: 100px"
-  />
-  <div>
-    <span>20&deg;C</span>
-    <span>10&deg;C</span>
-  </div>
-</div>
-            
+  ">
+            <p>Sun</p>
+            <img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+            <div>
+              <span>20&deg;C</span>
+              <span>10&deg;C</span>
+            </div>
           </div>
-        </div>
-        <div class="mt-4">
-          <h2>Today's Highlights</h2>
 
-          <div class="d-flex flex-wrap">
-          
-            <div
-              style="border-radius: 15%"
-              class="
+        </div>
+      </div>
+      <div class="mt-4">
+        <h2>Today's Highlights</h2>
+        <div class="d-flex flex-wrap">
+
+          <div style="border-radius: 15%" class="
                 d-flex
                 col-12 col-md-4 col-xl-2 col-lg-3
                 flex-column
@@ -275,16 +200,13 @@
                 p-3
                 m-2
                 font-weight-bold
-              "
-            >
-            <p class="py-2" >Visibility</p>
-            <h2  class="py-2">10000 m</h2>
+              ">
+            <p class="py-2">Visibility</p>
+            <h2 class="py-2">10000 m</h2>
             <img src="./assets/binoculars.png" style="height: 120px;" alt="" srcset="" />
-            
-            </div>
-            <div
-              style="border-radius: 15%"
-              class="
+
+          </div>
+          <div style="border-radius: 15%" class="
                 d-flex
                 col-12 col-md-4 col-xl-2 col-lg-3
                 flex-column
@@ -293,16 +215,13 @@
                 p-3
                 m-2
                 font-weight-bold
-              "
-            >
-            <p class="py-2" >Pressure</p>
-            <h2  class="py-2">1012 hPa</h2>
+              ">
+            <p class="py-2">Pressure</p>
+            <h2 class="py-2">1012 hPa</h2>
             <img src="./assets/pressure-gauge.png" style="height: 120px;" alt="" srcset="" />
-            
-            </div>
-            <div
-              style="border-radius: 15%"
-              class="
+
+          </div>
+          <div style="border-radius: 15%" class="
                 d-flex
                 col-12 col-md-4 col-xl-2 col-lg-3
                 flex-column
@@ -311,25 +230,24 @@
                 p-3
                 m-2
                 font-weight-bold
-              "
-            >
-            <p class="py-2" >Wind Speed</p>
-            <h2  class="py-2">4.79 km/h</h2>
+              ">
+            <p class="py-2">Wind Speed</p>
+            <h2 class="py-2">4.79 km/h</h2>
             <img src="./assets/windock.png" style="height: 120px;" alt="" srcset="" />
-            
-            </div>
+
           </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <script src="../JS/request.js"></script> -->
-    <!-- <script src="../JS/weather.js"></script> -->
-    <!-- <script type="text/javascript"
+  </div>
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- <script src="../JS/request.js"></script> -->
+  <!-- <script src="../JS/weather.js"></script> -->
+  <!-- <script type="text/javascript"
  src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
 <script>
   var alanBtnInstance = alanBtn({
@@ -343,5 +261,5 @@
   });
          
 </script> -->
-  </body>
+</body>
 </html>

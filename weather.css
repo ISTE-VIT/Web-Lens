@@ -1,44 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
 body {
   font-family: "Roboto", sans-serif;
-}
-p {
-  margin-bottom: 0;
-}
-
-.city-name {
-  position: absolute;
-  width: 100%;
-}
-.city-name p {
-  font-size: 16pt;
-  font-weight: 400;
-  color: grey;
-}
-.image_1 {
-  width: 250px;
-  height: 250px;
-  margin-top: 60px;
-}
-.temp span {
-  font-weight: 100;
-  font-size: 4em;
-  letter-spacing: -5px;
-  white-space: nowrap;
-}
-.card-mid {
-  line-height: 0.5;
 }
 .condition {
   line-height: 1em;
   font-weight: 700;
   font-size: 1em;
-  text-transform: capitalize;
 }
 .high::before {
   content: "";
-  background: url("../assets/up.svg") no-repeat;
+  background: url("./assets/up.svg") no-repeat;
   width: 10px;
   height: 15px;
   display: inline-block;
@@ -47,7 +18,7 @@ p {
 }
 .low::before {
   content: "";
-  background: url("../assets/down.svg") no-repeat;
+  background: url("./assets/down.svg") no-repeat;
   width: 10px;
   height: 15px;
   display: inline-block;
@@ -60,7 +31,3 @@ p {
   height: 100px;
   background: #202020;
 }
-.icon-container img {
-  margin: auto;
-}
-
