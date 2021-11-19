@@ -7,8 +7,6 @@ const cardInfo = document.querySelector('.left-card');
 const highlights = document.querySelector('.highlights');
 const week = document.querySelector('.weekly');
 
-
-
 const spitOutCelcius = (kelvin) => {
   celcius = Math.round(kelvin - 273.15);
   return celcius;
@@ -17,12 +15,15 @@ const isDayTime = (icon) => {
   if (icon.includes('d')) { return true }
   else { return false }
 }
+
 updateWeatherApp = (data) => {
   const [daily, weekly] = data;
   console.log(daily);
- // console.log(daily);
+  console.log(weekly);
   const imageName = daily.weather[0].icon;
+  const weekly_imageName = weekly.list[0].weather[0].icon;
   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
+  const weekly_iconSrc = `http://openweathermap.org/img/wn/${weekly_imageName}@2x.png`
   cityName.textContent = daily.name;
   cardBody.innerHTML = `
     <div class="card-body">
@@ -42,21 +43,17 @@ updateWeatherApp = (data) => {
           <div class="px-3 py-2 d-flex justify-content-center gap-2">
             <div class="text-center">
             <span>Feels Like</span>
-
               <span class="pr-2">${spitOutCelcius(daily.main.feels_like)}&deg;C</span>
             </div>
             <div class="text-center ml-4">
             <span>Humidity</span>
-
               <span>${daily.main.humidity}%</span>
             </div>
           </div>
         </div>
     `;
 
-
-
-    highlights.innerHTML = `
+  highlights.innerHTML = `
     <div style="border-radius: 15%" class="
     d-flex
     col-12 col-md-4 col-xl-2 col-lg-3
@@ -68,9 +65,8 @@ updateWeatherApp = (data) => {
     font-weight-bold
   ">
 <p class="py-2">Visibility</p>
-<h2 class="py-2">${parseInt(daily.visibility)/1000} km</h2>
+<h2 class="py-2">${parseInt(daily.visibility) / 1000} km</h2>
 <img src="./assets/binoculars.png" style="height: 120px;" alt="" srcset="" />
-
 </div>
 <div style="border-radius: 15%" class="
     d-flex
@@ -85,7 +81,6 @@ updateWeatherApp = (data) => {
 <p class="py-2">Pressure</p>
 <h2 class="py-2">${daily.main.pressure} hPa</h2>
 <img src="./assets/pressure-gauge.png" style="height: 120px;" alt="" srcset="" />
-
 </div>
 <div style="border-radius: 15%" class="
     d-flex
@@ -100,14 +95,13 @@ updateWeatherApp = (data) => {
 <p class="py-2">Wind Speed</p>
 <h2 class="py-2">${daily.wind.speed} km/h</h2>
 <img src="./assets/windock.png" style="height: 120px;" alt="" srcset="" />
-
 </div>
     `;
 
-    week.innerHTML = ``;
-  
-  for(i=0; i<7; i++) {
-  week.innerHTML += `
+  week.innerHTML = ``;
+
+  for (i = 0; i < 7; i++) {
+    week.innerHTML += `
   <div style="border-radius: 15%" class="
   d-flex
   col-12 col-md-4 col-xl-2 col-lg-3
@@ -118,43 +112,36 @@ updateWeatherApp = (data) => {
   m-2
   font-weight-bold
 ">
-<p>Sun</p>
-<img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+<p>${weekly.list[i].weather[0].main}</p>
+<img src="${weekly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
 <div>
-<span>30&deg;C</span>
-<span>10&deg;C</span>
+<span>${spitOutCelcius(weekly.list[i].main.temp_max)}&deg;C</span>
+<span>${spitOutCelcius(weekly.list[i].main.temp_min)}&deg;C</span>
 </div>
 </div>
   `;
-}
+  }
 
   if (isDayTime(imageName)) {
     // console.log('day');
     timeImage.setAttribute('src', '../assets/day_image.svg');
-    
-
   } else {
-  // console.log('night');
+    // console.log('night');
     timeImage.setAttribute('src', '../assets/night_image.svg');
- 
-
   }
+}
 
-   
- }
-
-  
 function successCallback(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
-  console.log(lat,lon);
+  console.log(lat, lon);
   requestCity1(lat, lon)
-  .then((data1) => {
-    updateWeatherApp(data1);
-  })
-  .catch((error) => {
-    console.error(error);
-  })
+    .then((data1) => {
+      updateWeatherApp(data1);
+    })
+    .catch((error) => {
+      console.error(error);
+    })
 }
 
 navigator.geolocation.getCurrentPosition(successCallback);
