@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link rel="stylesheet" href="./weather.css" />
-</head>
+</head> 
 
 <body>
   <!-- alan ai -->
@@ -28,43 +28,48 @@
                 p-2
               " />
         </form>
-        <div class="card-top text-center my-5">
-          <div class="city-name my-3">
-            <p style="font-size: 2rem;">Gurgaon</p>
+        <div class="left-card">
+          <div class="card-top text-center my-5">
+            <div class="my-3 city-name">
+              <p style="font-size: 2rem;">Gurgaon</p>
+            </div>
+            <img src="./assets/sunny.png" alt="" style="max-width: 180px" class="card-img-top" />
           </div>
-          <img src="./assets/sunny.png" alt="" style="max-width: 100px" class="card-img-top" />
+          <div class="card-body">
+            <div class="card-mid d-flex">
+              <div class="col-7 text-center temp">
+                <span style="font-size: 3em; letter-spacing: -2px;">30&deg;C</span>
+              </div>
+              <div class="col-5 mt-3 condition-temp">
+                <p class="condition">Thunder Storm</p>
+                <p class="high">30&deg;C</p>
+                <p class="low">27&deg;C</p>
+              </div>
+            </div>
+            <div class="icon-container card shadow mx-auto my-3">
+              <img src="./assets/cloud.svg" class="mx-auto my-auto" alt="" />
+            </div>
+            <div class="px-3 py-2 d-flex justify-content-center gap-2">
+              <div class="text-center">
+                <span>Feels Like</span>
+
+                <span class="pr-2">30&deg;C</span>
+              </div>
+              <div class="text-center ml-4">
+                <span>Humidity</span>
+
+                <span>55%</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="card-mid d-flex">
-            <div class="col-7 text-center temp">
-              <span style="font-size: 3em; letter-spacing: -2px;">30&deg;C</span>
-            </div>
-            <div class="col-5 mt-3 condition-temp">
-              <p class="condition">Thunder Storm</p>
-              <p class="high">30&deg;C</p>
-              <p class="low">27&deg;C</p>
-            </div>
-          </div>
-          <div class="icon-container card shadow mx-auto my-3">
-            <img src="./assets/cloud.svg" class="mx-auto my-auto" alt="" />
-          </div>
-          <div class="px-3 py-2 d-flex justify-content-center gap-2">
-            <div class="text-center">
-              <span class="pr-2">30&deg;C</span>
-              <span>Feels Like</span>
-            </div>
-            <div class="text-center ml-4">
-              <span>55%</span>
-              <span>Humidity</span>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
     <div class="col-lg-9 container px-4" style="background: #f6f6f8">
-      <div>
+    
         <h2 class="my-4">Weekly Forecast</h2>
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap weekly">
           <div style="border-radius: 15%" class="
                 d-flex
                 col-12 col-md-4 col-xl-2 col-lg-3
@@ -186,10 +191,10 @@
           </div>
 
         </div>
-      </div>
-      <div class="mt-4">
+   
+      <div class="mt-4 ">
         <h2>Today's Highlights</h2>
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap highlights">
 
           <div style="border-radius: 15%" class="
                 d-flex
@@ -202,7 +207,7 @@
                 font-weight-bold
               ">
             <p class="py-2">Visibility</p>
-            <h2 class="py-2">10000 m</h2>
+            <h2 class="py-2">10 km</h2>
             <img src="./assets/binoculars.png" style="height: 120px;" alt="" srcset="" />
 
           </div>
@@ -245,8 +250,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <!-- <script src="../JS/request.js"></script> -->
-  <!-- <script src="../JS/weather.js"></script> -->
+  <script src="/request.js"></script>
+  <script src="/weather.js"></script>
   <!-- <script type="text/javascript"
  src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
 <script>

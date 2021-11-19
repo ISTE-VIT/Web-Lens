@@ -1,162 +1,175 @@
+const searchForm = document.querySelector('.search-loaction');
+const cityValue = document.querySelector('.search-loaction input');
+const cityName = document.querySelector('.city-name p');
+const cardBody = document.querySelector('.card-body');
+const timeImage = document.querySelector('.card-top img');
+const cardInfo = document.querySelector('.left-card');
+const highlights = document.querySelector('.highlights');
+const week = document.querySelector('.weekly');
 
 
-// const searchForm = document.querySelector('.search-loaction');
-// const cityValue = document.querySelector('.search-loaction input');
-// const cityName = document.querySelector('.city-name p');
-// const cardBody = document.querySelector('.card-body');
-// const timeImage = document.querySelector('.card-top img');
-// const cardInfo = document.querySelector('.back-card');
 
-// const spitOutCelcius = (kelvin) => {
-//   celcius = Math.round(kelvin - 273.15);
-//   return celcius;
-// }
-// const isDayTime = (icon) => {
-//   if (icon.includes('d')) { return true }
-//   else { return false }
-// }
-// updateWeatherApp = (city) => {
-//   // console.log(city);
-//   const imageName = city.weather[0].icon;
-//   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
-//   cityName.textContent = city.name;
-//   cardBody.innerHTML = `
-//     <div class="card-mid row">
-//             <div class="col-8 text-center temp">
-//               <span>${spitOutCelcius(city.main.temp)}&deg;C</span>
-//             </div>
-//             <div class="col-4 condition-temp">
-//               <p class="condition">${city.weather[0].description}</p>
-//               <p class="high">${spitOutCelcius(city.main.temp_max)}&deg;C</p>
-//               <p class="low">${spitOutCelcius(city.main.temp_min)}&deg;C</p>
-//             </div>
-//           </div>
-//           <div class="icon-container card shadow mx-auto">
-//             <img src="${iconSrc}" alt="" />
-//           </div>
-//           <div class="card-mid px-5 py-4 row">
-//             <span class="wind">Wind Speed : </span>
-//             <p class="wind"> ${city.wind.speed}km/h</p>
-//           </div>
-//           <div class="card-bottom px-5 py-4 row">
-//             <div class="col text-center">
-//               <p>${spitOutCelcius(city.main.feels_like)}&deg;C</p>
-//               <span>Feels Like</span>
-//             </div>
-//             <div class="col text-center">
-//               <p>${city.main.humidity}%</p>
-//               <span>Humidity</span>
-//             </div>
-//           </div>
-//     `;
-//   if (isDayTime(imageName)) {
-//     // console.log('day');
-//     timeImage.setAttribute('src', '../assets/day_image.svg');
-//     if (cityName.classList.contains('text-white')) {
-//       cityName.classList.remove('text-white');
-//     } else {
-//       cityName.classList.add('text-black');
-//     }
+const spitOutCelcius = (kelvin) => {
+  celcius = Math.round(kelvin - 273.15);
+  return celcius;
+}
+const isDayTime = (icon) => {
+  if (icon.includes('d')) { return true }
+  else { return false }
+}
+updateWeatherApp = (data) => {
+  const [daily, weekly] = data;
+  console.log(daily);
+ // console.log(daily);
+  const imageName = daily.weather[0].icon;
+  const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
+  cityName.textContent = daily.name;
+  cardBody.innerHTML = `
+    <div class="card-body">
+          <div class="card-mid d-flex">
+            <div class="col-7 text-center temp">
+              <span style="font-size: 3em; letter-spacing: -2px;">${spitOutCelcius(daily.main.temp)}&deg;C</span>
+            </div>
+            <div class="col-5 mt-3 condition-temp">
+              <p class="condition" style="text-transform:capitalize;">${daily.weather[0].description}</p>
+              <p class="high">${spitOutCelcius(daily.main.temp_max)}&deg;C</p>
+              <p class="low">${spitOutCelcius(daily.main.temp_min)}&deg;C</p>
+            </div>
+          </div>
+          <div class="icon-container card shadow mx-auto my-3">
+            <img src="${iconSrc}" class="mx-auto my-auto" alt="" />
+          </div>
+          <div class="px-3 py-2 d-flex justify-content-center gap-2">
+            <div class="text-center">
+            <span>Feels Like</span>
 
-//   } else {
-//     // console.log('night');
-//     timeImage.setAttribute('src', '../assets/night_image.svg');
-//     if (cityName.classList.contains('text-black')) {
-//       cityName.classList.remove('text-black');
-//     } else {
-//       cityName.classList.add('text-white');
-//     }
+              <span class="pr-2">${spitOutCelcius(daily.main.feels_like)}&deg;C</span>
+            </div>
+            <div class="text-center ml-4">
+            <span>Humidity</span>
 
-//   }
+              <span>${daily.main.humidity}%</span>
+            </div>
+          </div>
+        </div>
+    `;
 
-//   cardInfo.classList.remove('d-none');
-// }
 
-// // updateWeatherApp1 = (city) => {
-// //   // console.log(city);
-// //   const imageName = city.weather[0].icon;
-// //   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
-// //   cityName.textContent = city.name;
-// //   cardBody.innerHTML = `
-// //     <div class="card-mid row">
-// //             <div class="col-8 text-center temp">
-// //               <span>${spitOutCelcius(city.main.temp)}&deg;C</span>
-// //             </div>
-// //             <div class="col-4 condition-temp">
-// //               <p class="condition">${city.weather[0].description}</p>
-// //               <p class="high">${spitOutCelcius(city.main.temp_max)}&deg;C</p>
-// //               <p class="low">${spitOutCelcius(city.main.temp_min)}&deg;C</p>
-// //             </div>
-// //           </div>
-// //           <div class="icon-container card shadow mx-auto">
-// //             <img src="${iconSrc}" alt="" />
-// //           </div>
-// //           <div class="card-mid px-5 py-4 row">
-// //             <span class="wind">Wind Speed : </span>
-// //             <p class="wind"> ${city.wind.speed}km/h</p>
-// //           </div>
-// //           <div class="card-bottom px-5 py-4 row">
-// //             <div class="col text-center">
-// //               <p>${spitOutCelcius(city.main.feels_like)}&deg;C</p>
-// //               <span>Feels Like</span>
-// //             </div>
-// //             <div class="col text-center">
-// //               <p>${city.main.humidity}%</p>
-// //               <span>Humidity</span>
-// //             </div>
-// //           </div>
-// //     `;
-// //   if (isDayTime(imageName)) {
-// //     // console.log('day');
-// //     timeImage.setAttribute('src', '../assets/day_image.svg');
-// //     if (cityName.classList.contains('text-white')) {
-// //       cityName.classList.remove('text-white');
-// //     } else {
-// //       cityName.classList.add('text-black');
-// //     }
 
-// //   } else {
-// //     // console.log('night');
-// //     timeImage.setAttribute('src', '../assets/night_image.svg');
-// //     if (cityName.classList.contains('text-black')) {
-// //       cityName.classList.remove('text-black');
-// //     } else {
-// //       cityName.classList.add('text-white');
-// //     }
+    highlights.innerHTML = `
+    <div style="border-radius: 15%" class="
+    d-flex
+    col-12 col-md-4 col-xl-2 col-lg-3
+    flex-column
+    align-items-center
+    bg-white
+    p-3
+    m-2
+    font-weight-bold
+  ">
+<p class="py-2">Visibility</p>
+<h2 class="py-2">${parseInt(daily.visibility)/1000} km</h2>
+<img src="./assets/binoculars.png" style="height: 120px;" alt="" srcset="" />
 
-// //   }
+</div>
+<div style="border-radius: 15%" class="
+    d-flex
+    col-12 col-md-4 col-xl-2 col-lg-3
+    flex-column
+    align-items-center
+    bg-white
+    p-3
+    m-2
+    font-weight-bold
+  ">
+<p class="py-2">Pressure</p>
+<h2 class="py-2">${daily.main.pressure} hPa</h2>
+<img src="./assets/pressure-gauge.png" style="height: 120px;" alt="" srcset="" />
 
-// //   cardInfo.classList.remove('d-none');
-// // }
+</div>
+<div style="border-radius: 15%" class="
+    d-flex
+    col-12 col-md-4 col-xl-2 col-lg-3
+    flex-column
+    align-items-center
+    bg-white
+    p-3
+    m-2
+    font-weight-bold
+  ">
+<p class="py-2">Wind Speed</p>
+<h2 class="py-2">${daily.wind.speed} km/h</h2>
+<img src="./assets/windock.png" style="height: 120px;" alt="" srcset="" />
 
-// function successCallback(position) {
-//   lat = position.coords.latitude;
-//   lon = position.coords.longitude;
-//   // console.log(position.coords.latitude); // 43.2132209
-//   // console.log(position.coords.longitude); // 27.9571503
-//   requestCity1(lat, lon)
-//   .then((data1) => {
-//     updateWeatherApp(data1);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   })
-// }
+</div>
+    `;
 
-// navigator.geolocation.getCurrentPosition(successCallback);
+    week.innerHTML = ``;
+  
+  for(i=0; i<7; i++) {
+  week.innerHTML += `
+  <div style="border-radius: 15%" class="
+  d-flex
+  col-12 col-md-4 col-xl-2 col-lg-3
+  flex-column
+  align-items-center
+  bg-white
+  p-3
+  m-2
+  font-weight-bold
+">
+<p>Sun</p>
+<img src="./assets/sunny.png" class="py-4" alt="" style="max-width: 100px" />
+<div>
+<span>30&deg;C</span>
+<span>10&deg;C</span>
+</div>
+</div>
+  `;
+}
 
-// //add an event listner to the form
-// searchForm.addEventListener('submit', e => {
-//   e.preventDefault();
-//   const citySearched = cityValue.value.trim();
-//   // console.log(citySearched);
-//   searchForm.reset();
+  if (isDayTime(imageName)) {
+    // console.log('day');
+    timeImage.setAttribute('src', '../assets/day_image.svg');
+    
 
-//   requestCity(citySearched)
-//     .then((data) => {
-//       updateWeatherApp(data);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     })
-// })
+  } else {
+  // console.log('night');
+    timeImage.setAttribute('src', '../assets/night_image.svg');
+ 
+
+  }
+
+   
+ }
+
+  
+function successCallback(position) {
+  lat = position.coords.latitude;
+  lon = position.coords.longitude;
+  console.log(lat,lon);
+  requestCity1(lat, lon)
+  .then((data1) => {
+    updateWeatherApp(data1);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+}
+
+navigator.geolocation.getCurrentPosition(successCallback);
+
+searchForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const citySearched = cityValue.value.trim();
+  // console.log(citySearched);
+  searchForm.reset();
+
+  requestCity(citySearched)
+    .then((data) => {
+      updateWeatherApp(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+})

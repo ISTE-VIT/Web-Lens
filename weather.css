@@ -2,6 +2,10 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+p{
+  margin: 0;
+}
 .condition {
   line-height: 1em;
   font-weight: 700;
