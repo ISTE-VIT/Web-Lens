@@ -5,7 +5,7 @@ const cardBody = document.querySelector('.card-body');
 const timeImage = document.querySelector('.card-top img');
 const cardInfo = document.querySelector('.left-card');
 const highlights = document.querySelector('.highlights');
-const week = document.querySelector('.weekly');
+const hour = document.querySelector('.hourly');
 
 const spitOutCelcius = (kelvin) => {
   celcius = Math.round(kelvin - 273.15);
@@ -17,13 +17,13 @@ const isDayTime = (icon) => {
 }
 
 updateWeatherApp = (data) => {
-  const [daily, weekly] = data;
+  const [daily, hourly] = data;
   console.log(daily);
-  console.log(weekly);
+  console.log(hourly);
   const imageName = daily.weather[0].icon;
-  // const weekly_imageName = weekly.list[0].weather[0].icon;
+  // const hourly_imageName = hourly.list[0].weather[0].icon;
   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
-  // const weekly_iconSrc = `http://openweathermap.org/img/wn/${weekly_imageName}@2x.png`
+  // const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
   cityName.textContent = daily.name;
   cardBody.innerHTML = `
     <div class="card-body">
@@ -98,12 +98,12 @@ updateWeatherApp = (data) => {
 </div>
     `;
 
-  week.innerHTML = ``;
+  hour.innerHTML = ``;
 
-  for (i = 0; i < 7; i++) {
-    const weekly_imageName = weekly.list[i].weather[0].icon;
-    const weekly_iconSrc = `http://openweathermap.org/img/wn/${weekly_imageName}@2x.png`
-    week.innerHTML += `
+  for (i = 0; i < 5; i++) {
+    const hourly_imageName = hourly.list[i].weather[0].icon;
+    const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
+    hour.innerHTML += `
   <div style="border-radius: 15%" class="
   d-flex
   col-12 col-md-4 col-xl-2 col-lg-3
@@ -114,13 +114,14 @@ updateWeatherApp = (data) => {
   m-2
   font-weight-bold
 ">
-<p>${weekly.list[i].weather[0].main}</p>
-<img src="${weekly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
-<div class="d-flex flex-column align-items-center">
-  <div class="p-2"><span>${spitOutCelcius(weekly.list[i].main.temp_max)}&deg;C</span></div>
-  <div class="p-2"><span>${spitOutCelcius(weekly.list[i].main.temp_min)}&deg;C</span></div>
-  <div class="p-2 ml-3"><span>${weekly.list[i].dt_txt}</span></div>
+<p>${hourly.list[i].weather[0].main}</p>
+<img src="${hourly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
+<div>
+  <span>${spitOutCelcius(hourly.list[i].main.temp_max)}&deg;C</span>
+  <span>${spitOutCelcius(hourly.list[i].main.temp_min)}&deg;C</span>
 </div>
+<span>${hourly.list[i].dt_txt.split(' ')[1]}</span>
+
 </div>
   `;
   }
@@ -138,9 +139,9 @@ function successCallback(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
   console.log(lat, lon);
-  requestCity_current(lat, lon)
-    .then((first_data) => {
-      updateWeatherApp(first_data);
+  requestByCoord(lat, lon)
+    .then((data) => {
+      updateWeatherApp(data);
     })
     .catch((error) => {
       // console.error(error);
@@ -155,7 +156,7 @@ searchForm.addEventListener('submit', e => {
   // console.log(citySearched);
   searchForm.reset();
 
-  requestCity(citySearched)
+  requestByCity(citySearched)
     .then((data) => {
       updateWeatherApp(data);
     })
