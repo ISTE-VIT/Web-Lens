@@ -21,9 +21,9 @@ updateWeatherApp = (data) => {
   console.log(daily);
   console.log(weekly);
   const imageName = daily.weather[0].icon;
-  const weekly_imageName = weekly.list[0].weather[0].icon;
+  // const weekly_imageName = weekly.list[0].weather[0].icon;
   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
-  const weekly_iconSrc = `http://openweathermap.org/img/wn/${weekly_imageName}@2x.png`
+  // const weekly_iconSrc = `http://openweathermap.org/img/wn/${weekly_imageName}@2x.png`
   cityName.textContent = daily.name;
   cardBody.innerHTML = `
     <div class="card-body">
@@ -101,6 +101,8 @@ updateWeatherApp = (data) => {
   week.innerHTML = ``;
 
   for (i = 0; i < 7; i++) {
+    const weekly_imageName = weekly.list[i].weather[0].icon;
+    const weekly_iconSrc = `http://openweathermap.org/img/wn/${weekly_imageName}@2x.png`
     week.innerHTML += `
   <div style="border-radius: 15%" class="
   d-flex
@@ -114,9 +116,10 @@ updateWeatherApp = (data) => {
 ">
 <p>${weekly.list[i].weather[0].main}</p>
 <img src="${weekly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
-<div>
-<span>${spitOutCelcius(weekly.list[i].main.temp_max)}&deg;C</span>
-<span>${spitOutCelcius(weekly.list[i].main.temp_min)}&deg;C</span>
+<div class="d-flex flex-column align-items-center">
+  <div class="p-2"><span>${spitOutCelcius(weekly.list[i].main.temp_max)}&deg;C</span></div>
+  <div class="p-2"><span>${spitOutCelcius(weekly.list[i].main.temp_min)}&deg;C</span></div>
+  <div class="p-2 ml-3"><span>${weekly.list[i].dt_txt}</span></div>
 </div>
 </div>
   `;
@@ -124,10 +127,10 @@ updateWeatherApp = (data) => {
 
   if (isDayTime(imageName)) {
     // console.log('day');
-    timeImage.setAttribute('src', '../assets/day_image.svg');
+    timeImage.setAttribute('src', './assets/day_image.svg');
   } else {
     // console.log('night');
-    timeImage.setAttribute('src', '../assets/night_image.svg');
+    timeImage.setAttribute('src', './assets/night_image.svg');
   }
 }
 
@@ -135,12 +138,12 @@ function successCallback(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
   console.log(lat, lon);
-  requestCity1(lat, lon)
-    .then((data1) => {
-      updateWeatherApp(data1);
+  requestCity_current(lat, lon)
+    .then((first_data) => {
+      updateWeatherApp(first_data);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
     })
 }
 
@@ -157,6 +160,6 @@ searchForm.addEventListener('submit', e => {
       updateWeatherApp(data);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
     })
 })

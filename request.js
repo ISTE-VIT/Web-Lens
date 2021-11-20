@@ -5,49 +5,49 @@ const requestCity = async (city) => {
     const baseURL = 'http://api.openweathermap.org/data/2.5/weather'
     const query = `?q=${city}&appid=${key}`;
 
-    const baseURL2 = 'https://api.openweathermap.org/data/2.5/forecast'
-    const query2 = `?q=${city}&appid=${key}`;
+    const baseURL_second = 'https://api.openweathermap.org/data/2.5/forecast'
+    const query_second = `?q=${city}&appid=${key}`;
 
 
     //make fetch call (promise call)
-    const response1 = await fetch(baseURL + query);
-    if (!response1.ok) {
-        throw Error(response1.status);
+    const response_first = await fetch(baseURL + query);
+    if (!response_first.ok) {
+        throw Error(response_first.status);
     }
 
-    const response2 = await fetch(baseURL2 + query2);
-    if (!response2.ok) {
-        throw Error(response2.status);
+    const response_second = await fetch(baseURL_second + query_second);
+    if (!response_second.ok) {
+        throw Error(response_second.status);
     }
 
     //promise data
-    const data1 = await response1.json();
-    const data2 = await response2.json();
-    const data = [data1, data2];
+    const first_data = await response_first.json();
+    const second_data = await response_second.json();
+    const data = [first_data, second_data];
     return data;
 }
 
-const requestCity1 = async (lat, lon) => {
+const requestCity_current = async (lat, lon) => {
     const baseURL = 'http://api.openweathermap.org/data/2.5/weather'
     const query = `?lat=${lat}&lon=${lon}&appid=${key}`;
 
-    const baseURL2 = 'https://api.openweathermap.org/data/2.5/forecast'
-    const query2 = `?lat=${lat}&lon=${lon}&appid=${key}&cnt=7`;
+    const baseURL_second = 'https://api.openweathermap.org/data/2.5/forecast'
+    const query_second = `?lat=${lat}&lon=${lon}&appid=${key}&cnt=7`;
 
     //make fetch call (promise call)
-    const response1 = await fetch(baseURL + query);
-    if (!response1.ok) {
-        throw Error(response1.status);
+    const response_first = await fetch(baseURL + query);
+    if (!response_first.ok) {
+        throw Error(response_first.status);
     }
 
-    const response2 = await fetch(baseURL2 + query2);
-    if (!response2.ok) {
-        throw Error(response2.status);
+    const response_second = await fetch(baseURL_second + query_second);
+    if (!response_second.ok) {
+        throw Error(response_second.status);
     }
 
     //promise data
-    const data1 = await response1.json();
-    const data2 = await response2.json();
-    const data = [data1, data2];
+    const first_data = await response_first.json();
+    const second_data = await response_second.json();
+    const data = [first_data, second_data];
     return data;
 }
