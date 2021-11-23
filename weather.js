@@ -21,9 +21,7 @@ updateWeatherApp = (data) => {
   console.log(daily);
   console.log(hourly);
   const imageName = daily.weather[0].icon;
-  // const hourly_imageName = hourly.list[0].weather[0].icon;
   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
-  // const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
   cityName.textContent = daily.name;
   cardBody.innerHTML = `
     <div class="card-body">
@@ -138,7 +136,6 @@ updateWeatherApp = (data) => {
 function successCallback(position) {
   lat = position.coords.latitude;
   lon = position.coords.longitude;
-  console.log(lat, lon);
   requestByCoord(lat, lon)
     .then((data) => {
       updateWeatherApp(data);
@@ -153,7 +150,6 @@ navigator.geolocation.getCurrentPosition(successCallback);
 searchForm.addEventListener('submit', e => {
   e.preventDefault();
   const citySearched = cityValue.value.trim();
-  // console.log(citySearched);
   searchForm.reset();
 
   requestByCity(citySearched)
