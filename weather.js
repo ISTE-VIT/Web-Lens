@@ -100,7 +100,7 @@ updateWeatherApp = (data) => {
 
   hour.innerHTML = ``;
 
-  for (i = 0; i < 5; i++) {
+  for (i = 1; i < 9; i++) {
     const hourly_imageName = hourly.list[i].weather[0].icon;
     const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
     hour.innerHTML += `

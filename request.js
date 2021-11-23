@@ -27,7 +27,7 @@ const requestByCoord = async (lat, lon) => {
     const queryDaily = `?lat=${lat}&lon=${lon}&appid=${key}`;
 
     const baseURLHourly = 'https://api.openweathermap.org/data/2.5/forecast'
-    const queryHourly = `?lat=${lat}&lon=${lon}&appid=${key}&cnt=7`;
+    const queryHourly = `?lat=${lat}&lon=${lon}&appid=${key}`;
 
     //make fetch call (promise call)
     const dailydata = await fetch(baseURLDaily + queryDaily);
