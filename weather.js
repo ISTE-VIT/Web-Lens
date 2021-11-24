@@ -140,9 +140,6 @@ function successCallback(position) {
     .then((data) => {
       updateWeatherApp(data);
     })
-    .catch((error) => {
-      // console.error(error);
-    })
 }
 
 navigator.geolocation.getCurrentPosition(successCallback);
@@ -155,8 +152,5 @@ searchForm.addEventListener('submit', e => {
   requestByCity(citySearched)
     .then((data) => {
       updateWeatherApp(data);
-    })
-    .catch((error) => {
-      // console.error(error);
     })
 })
