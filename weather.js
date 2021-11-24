@@ -18,8 +18,8 @@ const isDayTime = (icon) => {
 
 updateWeatherApp = (data) => {
   const [daily, hourly] = data;
-  console.log(daily);
-  console.log(hourly);
+  // console.log(daily);
+  // console.log(hourly);
   const imageName = daily.weather[0].icon;
   const iconSrc = `http://openweathermap.org/img/wn/${imageName}@2x.png`
   cityName.textContent = daily.name;
@@ -101,6 +101,8 @@ updateWeatherApp = (data) => {
   for (i = 1; i < 9; i++) {
     const hourly_imageName = hourly.list[i].weather[0].icon;
     const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
+    const str = hourly.list[i].weather[0].description;
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
     hour.innerHTML += `
   <div style="border-radius: 15%" class="
   d-flex
@@ -112,7 +114,7 @@ updateWeatherApp = (data) => {
   m-2
   font-weight-bold
 ">
-<p>${hourly.list[i].weather[0].main}</p>
+<p>${str2}</p>
 <img src="${hourly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
 <div>
   <span>${spitOutCelcius(hourly.list[i].main.temp_max)}&deg;C</span>
