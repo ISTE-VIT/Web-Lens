@@ -49,6 +49,42 @@ updateWeatherApp = (data) => {
         </div>
     `;
 
+  if (isDayTime(imageName)) {
+    timeImage.setAttribute('src', './assets/day_image.svg');
+  } else {
+    timeImage.setAttribute('src', './assets/night_image.svg');
+  }
+
+    hour.innerHTML = ``;
+
+    for (i = 1; i < 9; i++) {
+      const hourly_imageName = hourly.list[i].weather[0].icon;
+      const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
+      const str = hourly.list[i].weather[0].description;
+      const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+      hour.innerHTML += `
+    <div style="border-radius: 15%" class="
+    d-flex
+    col-12 col-md-4 col-xl-2 col-lg-3
+    flex-column
+    align-items-center
+    bg-white
+    p-3
+    m-2
+    font-weight-bold
+  ">
+  <p>${str2}</p>
+  <img src="${hourly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
+  <div>
+    <span>${spitOutCelcius(hourly.list[i].main.temp_max)}&deg;C</span>
+    <span>${spitOutCelcius(hourly.list[i].main.temp_min)}&deg;C</span>
+  </div>
+  <span>${hourly.list[i].dt_txt.split(' ')[1]}</span>
+  
+  </div>
+    `;
+    }
+
   highlights.innerHTML = `
     <div style="border-radius: 15%" class="
     d-flex
@@ -94,41 +130,6 @@ updateWeatherApp = (data) => {
 </div>
     `;
 
-  hour.innerHTML = ``;
-
-  for (i = 1; i < 9; i++) {
-    const hourly_imageName = hourly.list[i].weather[0].icon;
-    const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
-    const str = hourly.list[i].weather[0].description;
-    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
-    hour.innerHTML += `
-  <div style="border-radius: 15%" class="
-  d-flex
-  col-12 col-md-4 col-xl-2 col-lg-3
-  flex-column
-  align-items-center
-  bg-white
-  p-3
-  m-2
-  font-weight-bold
-">
-<p>${str2}</p>
-<img src="${hourly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
-<div>
-  <span>${spitOutCelcius(hourly.list[i].main.temp_max)}&deg;C</span>
-  <span>${spitOutCelcius(hourly.list[i].main.temp_min)}&deg;C</span>
-</div>
-<span>${hourly.list[i].dt_txt.split(' ')[1]}</span>
-
-</div>
-  `;
-  }
-
-  if (isDayTime(imageName)) {
-    timeImage.setAttribute('src', './assets/day_image.svg');
-  } else {
-    timeImage.setAttribute('src', './assets/night_image.svg');
-  }
 }
 
 function successCallback(position) {
