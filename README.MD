@@ -9,13 +9,13 @@ An exhilarating 2-day hands-on workshop that will teach participants to make a w
 
 <h2> Project Features </h2>
 
--  Display weather (daily and 3-hourly forecast) according to the current location of the user.
+-  Display weather (today's weather and 3-hourly forecast) according to the current location of the user.
 -  Search any city and display it’s weather
 -  AI Voice assistant to find out weather of any location.
 
 <h2> Project Screenshot </h2>
 <p align="center">
- <img src="https://ik.imagekit.io/m47q5r0txpn/ss2_zMY8s2kmP.png?updatedAt=1637676604340" > <br> 
+ <img src="https://ik.imagekit.io/m47q5r0txpn/ss3_QuEAZ7rWi.png?updatedAt=1637810828498" > <br> 
 </p>
 
 
