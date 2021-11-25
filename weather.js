@@ -3,7 +3,6 @@ const cityValue = document.querySelector('.search-loaction input');
 const cityName = document.querySelector('.city-name p');
 const cardBody = document.querySelector('.card-body');
 const timeImage = document.querySelector('.card-top img');
-const cardInfo = document.querySelector('.left-card');
 const highlights = document.querySelector('.highlights');
 const hour = document.querySelector('.hourly');
 
