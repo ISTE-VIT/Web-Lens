@@ -57,11 +57,11 @@ updateWeatherApp = (data) => {
 
     hour.innerHTML = ``;
 
-    for (i = 1; i < 9; i++) {
+    for (i = 0; i < 8; i++) {
       const hourly_imageName = hourly.list[i].weather[0].icon;
       const hourly_iconSrc = `http://openweathermap.org/img/wn/${hourly_imageName}@2x.png`
       const str = hourly.list[i].weather[0].description;
-      const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+      const desc = str.charAt(0).toUpperCase() + str.slice(1);
       hour.innerHTML += `
     <div style="border-radius: 15%" class="
     d-flex
@@ -73,7 +73,7 @@ updateWeatherApp = (data) => {
     m-2
     font-weight-bold
   ">
-  <p>${str2}</p>
+  <p>${desc}</p>
   <img src="${hourly_iconSrc}" class="py-4" alt="" style="max-width: 100px" />
   <div>
     <span>${spitOutCelcius(hourly.list[i].main.temp_max)}&deg;C</span>
