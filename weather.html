@@ -71,7 +71,7 @@
     </div>
     <div class="col-lg-9 container px-4" style="background: #f6f6f8">
 
-      <h2 class="my-4">3-Hourly Forecast</h2>
+      <h2 class="my-4">Hourly Forecast</h2>
       <div class="d-flex flex-wrap hourly">
         <!-- Card starts from here -->
         <div style="border-radius: 15%" class="
@@ -84,7 +84,7 @@
                 m-2
                 font-weight-bold
               ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -101,7 +101,7 @@
               m-2
               font-weight-bold
             ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -118,7 +118,7 @@
             m-2
             font-weight-bold
           ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -135,7 +135,7 @@
           m-2
           font-weight-bold
         ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -152,7 +152,7 @@
         m-2
         font-weight-bold
       ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -169,7 +169,7 @@
       m-2
       font-weight-bold
     ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -186,7 +186,7 @@
     m-2
     font-weight-bold
   ">
-          <p>Sunny</p>
+          <p>Sun</p>
           <img src="./assets/sunny.svg" class="py-4" alt="" style="max-width: 100px" />
           <div>
             <span>20&deg;C</span>
@@ -252,10 +252,6 @@
       </div>
     </div>
   </div>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
   <script src="/request.js"></script>
   <script src="/weather.js"></script>
   <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
@@ -264,7 +260,7 @@
       key: "bec9b61a777d1cda39187084433f480d2e956eca572e1d8b807a3e2338fdd0dc/stage",
       onCommand: function (commandData) {
         if (commandData.command === "go:back") {
-          //call client code that will react on the received command
+          console.log(commandData);
         }
       },
       rootEl: document.getElementById("alan-btn"),

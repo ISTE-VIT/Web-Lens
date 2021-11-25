@@ -125,10 +125,8 @@ updateWeatherApp = (data) => {
   }
 
   if (isDayTime(imageName)) {
-    // console.log('day');
     timeImage.setAttribute('src', './assets/day_image.svg');
   } else {
-    // console.log('night');
     timeImage.setAttribute('src', './assets/night_image.svg');
   }
 }

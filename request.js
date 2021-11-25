@@ -1,3 +1,4 @@
+
 // Unique key is setup here
 const key = '4fb3598019c9f2b0dc36c6518e6ad958';
 
@@ -23,6 +24,7 @@ const requestByCity = async (city) => {
 }
 
 const requestByCoord = async (lat, lon) => {
+    
     const baseURLDaily = 'http://api.openweathermap.org/data/2.5/weather'
     const queryDaily = `?lat=${lat}&lon=${lon}&appid=${key}`;
 
@@ -34,9 +36,9 @@ const requestByCoord = async (lat, lon) => {
     const hourlydata = await fetch(baseURLHourly + queryHourly);
 
 
-    //promise data
     const daily = await dailydata.json();
     const hourly = await hourlydata.json();
     const data = [daily, hourly];
     return data;
 }
+
