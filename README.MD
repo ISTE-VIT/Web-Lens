@@ -27,7 +27,9 @@ An exhilarating 2-day hands-on workshop that will teach participants to make a w
 	
 The following resources consist of the slides taught in the respective sessions: 
 	
-- <a href="https://www.canva.com/design/DAEwubI3nY8/P3adMcT5KWZTmgOXKOIWiA/view?utm_content=DAEwubI3nY8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"> Presentation</a>
+- <a href="https://docs.google.com/presentation/d/1d1M9YDtZucty2tR9selBwW4ErwDrJl3w7k_oblsSrYw/edit#slide=id.g1046feb1842_0_613"> Session 1</a>
+- <a href="https://docs.google.com/presentation/d/1F692OSYSZb3FRWNhuBgdMHD8fV-glKnyoNd22xrAy8A/edit#slide=id.g1046feb1842_0_1153"> Session 2 & 3</a>
+
 
 
 
