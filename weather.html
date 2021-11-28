@@ -261,19 +261,19 @@
   </div>
   <script src="./request.js"></script>
   <script src="./weather.js"></script>
-  <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
-  <script>
-    var alanBtnInstance = alanBtn({
-      key: "bec9b61a777d1cda39187084433f480d2e956eca572e1d8b807a3e2338fdd0dc/stage",
-      onCommand: function (commandData) {
-        if (commandData.command === "go:back") {
-          console.log(commandData);
-        }
-      },
-      rootEl: document.getElementById("alan-btn"),
-    });
-
-  </script>
+  <script type="text/javascript"
+  src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+ <script>
+   var alanBtnInstance = alanBtn({
+     key: "YOUR UNIQUE KEY HERE",
+     onCommand: function (commandData) {
+       if (commandData.command === "go:back") {
+         //call client code that will react on the received command
+       }
+     },
+     rootEl: document.getElementById("alan-btn"),
+   });
+ </script>
 </body>
 
 </html>
